@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊達醸造三豊 ｜ サイト試作一覧</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Noto Sans JP', sans-serif;
+    background:#FBF7F0;
+    color:#3C1E0F;
+    min-height:100vh;
+    line-height:1.7;
+  }
+  .container {
+    max-width:960px;
+    margin:0 auto;
+    padding:48px 24px 80px;
+  }
+  .header {
+    text-align:center;
+    margin-bottom:48px;
+    padding-bottom:32px;
+    border-bottom:1px solid rgba(60,30,15,0.15);
+  }
+  .header .label {
+    font-family:'Shippori Mincho', serif;
+    font-size:12px;
+    color:#B89968;
+    letter-spacing:0.4em;
+    margin-bottom:14px;
+  }
+  .header h1 {
+    font-family:'Shippori Mincho', serif;
+    font-size:32px;
+    font-weight:500;
+    color:#3C1E0F;
+    margin-bottom:12px;
+    letter-spacing:0.05em;
+  }
+  .header .subtitle {
+    font-size:14px;
+    color:#5A3A22;
+    line-height:1.9;
+  }
+  .meta-bar {
+    background:#FFFFFF;
+    border:0.5px solid rgba(60,30,15,0.15);
+    padding:18px 22px;
+    margin-bottom:40px;
+    font-size:12px;
+    color:#5A3A22;
+    line-height:1.9;
+  }
+  .meta-bar .meta-title {
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    color:#C8541A;
+    letter-spacing:0.15em;
+    margin-bottom:8px;
+  }
+  .grid {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+  }
+  @media (max-width:720px) {
+    .grid { grid-template-columns:1fr; gap:20px; }
+    .container { padding:32px 16px 60px; }
+    .header h1 { font-size:24px; }
+  }
+  .card {
+    background:#FFFFFF;
+    border:0.5px solid rgba(60,30,15,0.15);
+    overflow:hidden;
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+  }
+  .card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 12px 32px rgba(60,30,15,0.12);
+    border-color:#C8541A;
+  }
+  .card .preview {
+    height:200px;
+    background:#FBF7F0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-bottom:0.5px solid rgba(60,30,15,0.1);
+    position:relative;
+  }
+  .card .preview .number {
+    font-family:'Shippori Mincho', serif;
+    font-size:48px;
+    color:#C8541A;
+    line-height:1;
+  }
+  .card .preview .device {
+    font-size:11px;
+    color:#B89968;
+    letter-spacing:0.3em;
+    margin-top:14px;
+  }
+  .card .preview .icon {
+    font-size:36px;
+    color:#3C1E0F;
+    margin-bottom:6px;
+  }
+  .card .body {
+    padding:22px;
+  }
+  .card .body h3 {
+    font-family:'Shippori Mincho', serif;
+    font-size:18px;
+    color:#3C1E0F;
+    font-weight:500;
+    margin-bottom:8px;
+    letter-spacing:0.05em;
+  }
+  .card .body p {
+    font-size:12px;
+    color:#5A3A22;
+    line-height:1.9;
+    margin-bottom:14px;
+  }
+  .card .body .badge {
+    display:inline-block;
+    font-size:10px;
+    background:#C8541A;
+    color:#FBF7F0;
+    padding:4px 12px;
+    letter-spacing:0.15em;
+    margin-bottom:10px;
+  }
+  .card .body .arrow {
+    font-size:11px;
+    color:#C8541A;
+    letter-spacing:0.15em;
+  }
+  .footer {
+    margin-top:60px;
+    padding-top:30px;
+    border-top:0.5px solid rgba(60,30,15,0.15);
+    text-align:center;
+    font-size:11px;
+    color:#B89968;
+    line-height:2;
+  }
+  .footer .brand {
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    color:#3C1E0F;
+    letter-spacing:0.2em;
+    margin-bottom:6px;
+  }
+  .deploy-note {
+    background:#3C1E0F;
+    color:#F5E6CC;
+    padding:24px 22px;
+    margin:40px 0;
+    font-size:12px;
+    line-height:1.9;
+  }
+  .deploy-note strong {
+    font-family:'Shippori Mincho', serif;
+    color:#D4AF6A;
+    font-size:13px;
+    letter-spacing:0.15em;
+    display:block;
+    margin-bottom:10px;
+  }
+  .deploy-note ol {
+    padding-left:20px;
+    margin-top:8px;
+  }
+  .deploy-note li {
+    margin-bottom:6px;
+  }
+  .deploy-note code {
+    background:rgba(212,175,106,0.15);
+    color:#D4AF6A;
+    padding:2px 6px;
+    font-size:11px;
+    font-family:monospace;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="label">― SANPO YT FOOD ―</div>
+    <h1>伊達醸造 三豊 ｜ サイト試作</h1>
+    <div class="subtitle">
+      鹿児島産黒酢を使った南蛮料理ブランドの新HP試作版です。<br>
+      下記のリンクから各バージョンをご覧いただけます。
+    </div>
+  </div>
+
+  <div class="meta-bar">
+    <div class="meta-title">― DESIGN SPEC ―</div>
+    カラー：オレンジ #C8541A × ダークブラウン × ゴールドの和モダン<br>
+    フォント：Shippori Mincho（見出し）＋ Noto Sans JP（本文）<br>
+    EC販売商品：南蛮ダレ・黒酢のたれ・黒酢（鶏南蛮等の惣菜は催事限定）
+  </div>
+
+  <div class="grid">
+
+    <a href="pc.html" class="card">
+      <div class="preview">
+        <div class="number">壱</div>
+        <div class="device">PC / DESKTOP</div>
+      </div>
+      <div class="body">
+        <span class="badge">DESKTOP</span>
+        <h3>PC版（推奨幅 1024px〜）</h3>
+        <p>百貨店催事の常連客がご家族とPCで閲覧する想定。商品ラインナップ・催事スケジュール・ブランドストーリーをじっくり読ませる構成。</p>
+        <div class="arrow">PC版を開く →</div>
+      </div>
+    </a>
+
+    <a href="mobile.html" class="card">
+      <div class="preview">
+        <div class="number">弐</div>
+        <div class="device">MOBILE / SP</div>
+      </div>
+      <div class="body">
+        <span class="badge">MOBILE</span>
+        <h3>モバイル版（推奨幅〜480px）</h3>
+        <p>催事会場でその場でQRからアクセスする想定。次回催事・購入CTAをファーストビューに集約。スマホ実機での確認推奨。</p>
+        <div class="arrow">モバイル版を開く →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="deploy-note">
+    <strong>― 公開URLを発行する手順 ―</strong>
+    このフォルダ全体をZIPにせず、<strong>そのままドラッグ&ドロップ</strong>するだけで公開URLが手に入ります。
+    <ol>
+      <li><a href="https://app.netlify.com/drop" style="color:#D4AF6A; text-decoration:underline;">Netlify Drop</a> を開く（無料・登録不要）</li>
+      <li>解凍した <code>sanpo_site</code> フォルダごとブラウザにドラッグ&ドロップ</li>
+      <li>数十秒で <code>https://○○○.netlify.app</code> という公開URLが発行されます</li>
+      <li>そのURLを社内・スマホ実機で共有してご確認ください</li>
+    </ol>
+    ※ 試作版なので公開URLは社内共有のみに留めることを推奨します。
+  </div>
+
+  <div class="footer">
+    <div class="brand">伊達醸造 三豊</div>
+    株式会社ワイティフード ／ Site Prototype 2025<br>
+    PC・モバイル両対応 ／ HTML / CSS のみで動作（フレームワーク不要）
+  </div>
+
+</div>
+</body>
+</html>

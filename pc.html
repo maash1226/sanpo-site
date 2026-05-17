@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊達醸造 三豊 ｜ 鹿児島黒酢の南蛮料理</title>
+<meta name="description" content="鹿児島産黒酢を使った南蛮料理の催事販売と、ご家庭で楽しめる南蛮ダレ・黒酢の物販。銀座三越・日本橋三越ほか百貨店出店中。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    background:#FBF7F0;
+    color:#3C1E0F;
+    line-height:1.8;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  /* ===== Top Notice ===== */
+  .top-notice{
+    background:#3C1E0F;
+    color:#D4AF6A;
+    text-align:center;
+    padding:8px 16px;
+    font-size:11px;
+    letter-spacing:0.2em;
+    font-family:'Shippori Mincho', serif;
+  }
+
+  /* ===== Navigation ===== */
+  .nav{
+    background:#FBF7F0;
+    border-bottom:0.5px solid rgba(60,30,15,0.15);
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(10px);
+  }
+  .nav-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 32px;
+  }
+  .logo{
+    font-family:'Shippori Mincho', serif;
+    font-size:20px;
+    color:#3C1E0F;
+    letter-spacing:0.15em;
+    font-weight:500;
+  }
+  .logo .small{
+    display:block;
+    font-size:9px;
+    color:#B89968;
+    letter-spacing:0.4em;
+    margin-bottom:2px;
+  }
+  .nav-menu{
+    display:flex;
+    gap:28px;
+    align-items:center;
+    font-size:12px;
+    letter-spacing:0.1em;
+  }
+  .nav-menu a{color:#5A3A22; transition:color 0.2s;}
+  .nav-menu a:hover{color:#C8541A;}
+  .nav-cta{
+    background:#C8541A;
+    color:#FBF7F0 !important;
+    padding:9px 18px;
+    letter-spacing:0.15em;
+    font-size:11px;
+    transition:background 0.2s;
+  }
+  .nav-cta:hover{background:#A0431A; color:#FBF7F0 !important;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    padding:80px 32px 60px;
+    text-align:center;
+    overflow:hidden;
+    background:#FBF7F0;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    top:30px; left:30px;
+    width:50px; height:50px;
+    border-top:1px solid #B89968;
+    border-left:1px solid #B89968;
+    opacity:0.5;
+  }
+  .hero::after{
+    content:'';
+    position:absolute;
+    bottom:30px; right:30px;
+    width:50px; height:50px;
+    border-bottom:1px solid #B89968;
+    border-right:1px solid #B89968;
+    opacity:0.5;
+  }
+  .hero-label{
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    color:#B89968;
+    letter-spacing:0.4em;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Shippori Mincho', serif;
+    font-size:48px;
+    font-weight:500;
+    color:#3C1E0F;
+    line-height:1.5;
+    letter-spacing:0.05em;
+    margin-bottom:18px;
+  }
+  .hero h1 .accent{color:#C8541A;}
+  .hero-sub{
+    font-size:14px;
+    color:#5A3A22;
+    line-height:2;
+    margin-bottom:36px;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .hero-cta-row{
+    display:inline-flex;
+    gap:14px;
+    margin-bottom:60px;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 28px;
+    font-size:12px;
+    letter-spacing:0.15em;
+    cursor:pointer;
+    transition:all 0.2s;
+    border:none;
+    font-family:'Shippori Mincho', serif;
+  }
+  .btn-primary{
+    background:#C8541A;
+    color:#FBF7F0;
+  }
+  .btn-primary:hover{background:#A0431A;}
+  .btn-outline{
+    background:transparent;
+    color:#3C1E0F;
+    border:1px solid #3C1E0F;
+  }
+  .btn-outline:hover{background:#3C1E0F; color:#FBF7F0;}
+
+  /* ===== Strengths Grid ===== */
+  .strengths{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
+    max-width:900px;
+    margin:0 auto;
+    border-top:0.5px solid rgba(184,153,104,0.4);
+    border-bottom:0.5px solid rgba(184,153,104,0.4);
+  }
+  .strength-item{
+    text-align:center;
+    padding:28px 16px;
+    border-right:0.5px solid rgba(184,153,104,0.4);
+  }
+  .strength-item:last-child{border-right:none;}
+  .strength-num{
+    font-family:'Shippori Mincho', serif;
+    font-size:32px;
+    color:#C8541A;
+    margin-bottom:10px;
+    line-height:1;
+  }
+  .strength-title{
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    color:#3C1E0F;
+    letter-spacing:0.1em;
+    margin-bottom:6px;
+  }
+  .strength-desc{
+    font-size:11px;
+    color:#7A6A4F;
+    line-height:1.7;
+  }
+
+  /* ===== Feature Band ===== */
+  .feature-band{
+    background:#3C1E0F;
+    color:#F5E6CC;
+    text-align:center;
+    padding:28px;
+    font-family:'Shippori Mincho', serif;
+    font-size:18px;
+    letter-spacing:0.2em;
+  }
+  .feature-band .accent{color:#D4AF6A;}
+
+  /* ===== Section Common ===== */
+  section{padding:80px 32px;}
+  .section-inner{max-width:1100px; margin:0 auto;}
+  .section-head{
+    text-align:center;
+    margin-bottom:48px;
+  }
+  .section-head .label{
+    font-family:'Shippori Mincho', serif;
+    font-size:11px;
+    color:#B89968;
+    letter-spacing:0.4em;
+    margin-bottom:12px;
+  }
+  .section-head h2{
+    font-family:'Shippori Mincho', serif;
+    font-size:30px;
+    font-weight:500;
+    color:#3C1E0F;
+    letter-spacing:0.1em;
+  }
+  .section-head .lead{
+    font-size:13px;
+    color:#5A3A22;
+    line-height:2;
+    margin-top:14px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* ===== Brand Story ===== */
+  .story{background:#FBF7F0;}
+  .story-text{
+    font-family:'Shippori Mincho', serif;
+    font-size:15px;
+    color:#3C1E0F;
+    line-height:2.4;
+    text-align:center;
+    max-width:580px;
+    margin:0 auto 36px;
+    letter-spacing:0.05em;
+  }
+  .retailers{
+    background:#FFFFFF;
+    border:0.5px solid rgba(184,153,104,0.5);
+    padding:28px 32px;
+    max-width:680px;
+    margin:0 auto;
+  }
+  .retailers-label{
+    font-family:'Shippori Mincho', serif;
+    font-size:11px;
+    color:#B89968;
+    letter-spacing:0.4em;
+    text-align:center;
+    margin-bottom:16px;
+  }
+  .retailers-list{
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    color:#3C1E0F;
+    line-height:2.2;
+    text-align:center;
+    letter-spacing:0.15em;
+  }
+
+  /* ===== Products (split: EC / Event-only) ===== */
+  .products{background:#F5E6CC;}
+  .product-tabs{
+    display:flex;
+    justify-content:center;
+    gap:0;
+    margin-bottom:36px;
+  }
+  .tab-label{
+    background:#FBF7F0;
+    color:#3C1E0F;
+    border:0.5px solid #B89968;
+    padding:14px 32px;
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    letter-spacing:0.15em;
+  }
+  .tab-label.active{
+    background:#3C1E0F;
+    color:#D4AF6A;
+    border-color:#3C1E0F;
+  }
+  .product-section-title{
+    text-align:center;
+    margin:48px 0 24px;
+    padding:0 16px;
+  }
+  .product-section-title:first-child{margin-top:0;}
+  .product-section-title h3{
+    font-family:'Shippori Mincho', serif;
+    font-size:20px;
+    color:#3C1E0F;
+    font-weight:500;
+    letter-spacing:0.15em;
+    display:inline-block;
+    padding:0 24px;
+    background:#F5E6CC;
+    position:relative;
+    z-index:1;
+  }
+  .product-section-title{
+    position:relative;
+  }
+  .product-section-title::before{
+    content:'';
+    position:absolute;
+    top:50%; left:0; right:0;
+    height:0.5px;
+    background:#B89968;
+    z-index:0;
+  }
+  .product-section-title h3{
+    background:#F5E6CC;
+    position:relative;
+    z-index:1;
+  }
+  .product-section-sub{
+    font-size:12px;
+    color:#5A3A22;
+    margin-top:10px;
+    text-align:center;
+  }
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  .product-grid.event{
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+  }
+  .product-card{
+    background:#FFFFFF;
+    border:0.5px solid rgba(60,30,15,0.15);
+    overflow:hidden;
+    transition:all 0.25s;
+  }
+  .product-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 36px rgba(60,30,15,0.12);
+  }
+  .product-img{
+    height:180px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#F5E6CC;
+    font-family:'Shippori Mincho', serif;
+    font-size:24px;
+    letter-spacing:0.2em;
+    position:relative;
+  }
+  .product-grid.event .product-img{height:120px; font-size:18px;}
+  .product-img.c1{background:linear-gradient(135deg, #C8541A 0%, #A0431A 100%);}
+  .product-img.c2{background:linear-gradient(135deg, #A0431A 0%, #6B2D11 100%);}
+  .product-img.c3{background:linear-gradient(135deg, #3C1E0F 0%, #2A1408 100%);}
+  .product-img.c4{background:linear-gradient(135deg, #5A3A22 0%, #3C1E0F 100%);}
+  .product-img.c5{background:linear-gradient(135deg, #B89968 0%, #8B6F3F 100%);}
+  .product-img.c6{background:linear-gradient(135deg, #8B6F3F 0%, #5A3A22 100%);}
+  .product-badge{
+    position:absolute;
+    top:10px; left:10px;
+    background:rgba(0,0,0,0.4);
+    color:#F5E6CC;
+    font-size:9px;
+    padding:3px 8px;
+    letter-spacing:0.2em;
+  }
+  .product-body{padding:16px 18px 20px;}
+  .product-name{
+    font-family:'Shippori Mincho', serif;
+    font-size:16px;
+    color:#3C1E0F;
+    margin-bottom:6px;
+    letter-spacing:0.05em;
+  }
+  .product-grid.event .product-name{font-size:14px;}
+  .product-desc{
+    font-size:11px;
+    color:#7A6A4F;
+    line-height:1.8;
+    margin-bottom:12px;
+  }
+  .product-price{
+    font-family:'Shippori Mincho', serif;
+    font-size:16px;
+    color:#C8541A;
+    margin-bottom:10px;
+  }
+  .product-cta{
+    display:inline-block;
+    background:#C8541A;
+    color:#FBF7F0;
+    padding:7px 16px;
+    font-size:11px;
+    letter-spacing:0.15em;
+    transition:background 0.2s;
+  }
+  .product-cta:hover{background:#A0431A; color:#FBF7F0;}
+  .product-event-only{
+    display:inline-block;
+    color:#B89968;
+    font-size:10px;
+    letter-spacing:0.2em;
+    border:0.5px solid #B89968;
+    padding:5px 10px;
+  }
+
+  /* ===== Schedule ===== */
+  .schedule{background:#FBF7F0;}
+  .schedule-table-wrap{
+    max-width:760px;
+    margin:0 auto;
+    background:#FFFFFF;
+    border:0.5px solid #B89968;
+    overflow:hidden;
+  }
+  .schedule-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  .schedule-table thead{
+    background:#3C1E0F;
+    color:#D4AF6A;
+  }
+  .schedule-table th{
+    padding:16px;
+    text-align:left;
+    font-family:'Shippori Mincho', serif;
+    font-weight:400;
+    letter-spacing:0.15em;
+    font-size:12px;
+  }
+  .schedule-table td{
+    padding:16px;
+    border-bottom:0.5px solid rgba(184,153,104,0.3);
+  }
+  .schedule-table tr:last-child td{border-bottom:none;}
+  .schedule-table .date{
+    font-family:'Shippori Mincho', serif;
+    color:#3C1E0F;
+  }
+  .schedule-table .store{
+    font-family:'Shippori Mincho', serif;
+    color:#3C1E0F;
+    font-weight:500;
+  }
+  .schedule-table .menu-c{color:#7A6A4F;}
+  .schedule-now{
+    background:#C8541A;
+    color:#FBF7F0;
+    font-size:10px;
+    padding:3px 9px;
+    letter-spacing:0.15em;
+    margin-left:8px;
+    font-family:'Noto Sans JP', sans-serif;
+  }
+
+  /* ===== Recipe ===== */
+  .recipe{background:#F5E6CC;}
+  .recipe-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  .recipe-card{
+    background:#FBF7F0;
+    border:0.5px solid rgba(60,30,15,0.1);
+    overflow:hidden;
+    transition:all 0.25s;
+  }
+  .recipe-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 36px rgba(60,30,15,0.12);
+  }
+  .recipe-img{
+    height:160px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#FBF7F0;
+    font-family:'Shippori Mincho', serif;
+    font-size:18px;
+    letter-spacing:0.15em;
+    background:linear-gradient(135deg, #C8541A 0%, #A0431A 100%);
+  }
+  .recipe-img.r2{background:linear-gradient(135deg, #5A3A22 0%, #3C1E0F 100%);}
+  .recipe-img.r3{background:linear-gradient(135deg, #8B6F3F 0%, #5A3A22 100%);}
+  .recipe-body{padding:18px 20px 22px;}
+  .recipe-tag{
+    display:inline-block;
+    font-size:10px;
+    color:#B89968;
+    letter-spacing:0.2em;
+    margin-bottom:6px;
+  }
+  .recipe-name{
+    font-family:'Shippori Mincho', serif;
+    font-size:16px;
+    color:#3C1E0F;
+    margin-bottom:8px;
+    letter-spacing:0.05em;
+  }
+  .recipe-meta{
+    font-size:11px;
+    color:#7A6A4F;
+    line-height:1.8;
+  }
+
+  /* ===== Voice ===== */
+  .voice{background:#3C1E0F;}
+  .voice .section-head h2{color:#F5E6CC;}
+  .voice .section-head .label{color:#D4AF6A;}
+  .voice-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  .voice-card{
+    background:#2A1408;
+    border:0.5px solid rgba(212,175,106,0.3);
+    padding:24px;
+    position:relative;
+  }
+  .voice-quote{
+    font-family:'Shippori Mincho', serif;
+    font-size:32px;
+    color:#D4AF6A;
+    line-height:1;
+    opacity:0.5;
+    margin-bottom:8px;
+  }
+  .voice-text{
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    color:#F5E6CC;
+    line-height:2;
+    margin-bottom:16px;
+  }
+  .voice-author{
+    font-size:11px;
+    color:#B89968;
+    letter-spacing:0.15em;
+    border-top:0.5px solid rgba(184,153,104,0.3);
+    padding-top:12px;
+  }
+
+  /* ===== Instagram ===== */
+  .instagram{background:#FBF7F0;}
+  .ig-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:6px;
+    max-width:1000px;
+    margin:0 auto;
+  }
+  .ig-item{
+    aspect-ratio:1;
+    background:linear-gradient(135deg, #C8541A 0%, #A0431A 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#FBF7F0;
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    transition:opacity 0.2s;
+    cursor:pointer;
+  }
+  .ig-item:hover{opacity:0.8;}
+  .ig-item:nth-child(2){background:linear-gradient(135deg, #5A3A22 0%, #3C1E0F 100%);}
+  .ig-item:nth-child(3){background:linear-gradient(135deg, #B89968 0%, #8B6F3F 100%);}
+  .ig-item:nth-child(4){background:linear-gradient(135deg, #3C1E0F 0%, #2A1408 100%);}
+  .ig-item:nth-child(5){background:linear-gradient(135deg, #C8541A 0%, #6B2D11 100%);}
+  .ig-item:nth-child(6){background:linear-gradient(135deg, #8B6F3F 0%, #5A3A22 100%);}
+  .ig-follow{
+    text-align:center;
+    margin-top:32px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-final{
+    background:#3C1E0F;
+    text-align:center;
+    padding:80px 32px;
+    color:#F5E6CC;
+    position:relative;
+  }
+  .cta-final::before, .cta-final::after{
+    content:'';
+    position:absolute;
+    width:80px; height:80px;
+    border:1px solid #D4AF6A;
+    opacity:0.3;
+  }
+  .cta-final::before{top:24px; left:24px; border-right:none; border-bottom:none;}
+  .cta-final::after{bottom:24px; right:24px; border-left:none; border-top:none;}
+  .cta-final .label{
+    font-family:'Shippori Mincho', serif;
+    font-size:11px;
+    color:#D4AF6A;
+    letter-spacing:0.4em;
+    margin-bottom:16px;
+  }
+  .cta-final h2{
+    font-family:'Shippori Mincho', serif;
+    font-size:32px;
+    color:#F5E6CC;
+    margin-bottom:14px;
+    font-weight:500;
+    letter-spacing:0.1em;
+  }
+  .cta-final p{
+    font-size:13px;
+    color:#B89968;
+    margin-bottom:32px;
+    letter-spacing:0.1em;
+  }
+  .cta-final .btn-primary{
+    padding:16px 44px;
+    font-size:13px;
+    letter-spacing:0.2em;
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:#2A1408;
+    color:#B89968;
+    padding:48px 32px 24px;
+    font-size:12px;
+  }
+  .footer-inner{
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:32px;
+    padding-bottom:32px;
+    border-bottom:0.5px solid rgba(184,153,104,0.2);
+  }
+  .footer-brand .logo{color:#F5E6CC; margin-bottom:14px;}
+  .footer-brand .logo .small{color:#D4AF6A;}
+  .footer-brand p{
+    font-size:11px;
+    color:#7A6A4F;
+    line-height:1.9;
+  }
+  .footer-col h4{
+    font-family:'Shippori Mincho', serif;
+    color:#D4AF6A;
+    font-size:12px;
+    letter-spacing:0.2em;
+    margin-bottom:14px;
+    font-weight:500;
+  }
+  .footer-col a{
+    display:block;
+    color:#B89968;
+    font-size:11px;
+    line-height:2.2;
+    transition:color 0.2s;
+  }
+  .footer-col a:hover{color:#F5E6CC;}
+  .footer-bottom{
+    text-align:center;
+    padding-top:24px;
+    font-size:10px;
+    color:#7A6A4F;
+    letter-spacing:0.15em;
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Notice -->
+<div class="top-notice">― 次回催事：5/14〜5/20 銀座三越本館地下2階 ／ いか南蛮 出店 ―</div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="small">DATE JOZO</span>
+      伊達醸造 三豊
+    </a>
+    <div class="nav-menu">
+      <a href="#story">ブランド</a>
+      <a href="#products">商品</a>
+      <a href="#schedule">催事日程</a>
+      <a href="#recipe">レシピ</a>
+      <a href="#voice">お客様の声</a>
+      <a href="https://ytfood.official.ec/" class="nav-cta">オンラインショップ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-label">― KAGOSHIMA KUROZU ―</div>
+  <h1>日本に、おいしい<br><span class="accent">幸せ</span>を。</h1>
+  <p class="hero-sub">
+    鹿児島・福山町産の本物の黒酢でつくる、季節の南蛮料理。<br>
+    百貨店催事で出会える、健やかな食卓のごちそう。
+  </p>
+  <div class="hero-cta-row">
+    <a href="#products" class="btn btn-primary">商品を見る</a>
+    <a href="#schedule" class="btn btn-outline">催事日程を見る</a>
+  </div>
+
+  <div class="strengths">
+    <div class="strength-item">
+      <div class="strength-num">壱</div>
+      <div class="strength-title">鹿児島黒酢</div>
+      <div class="strength-desc">福山町・壺畑仕込み</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">弐</div>
+      <div class="strength-title">百貨店実績</div>
+      <div class="strength-desc">2019年より出店</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">参</div>
+      <div class="strength-title">旬の彩り</div>
+      <div class="strength-desc">季節の食材を厳選</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">肆</div>
+      <div class="strength-title">手仕込み</div>
+      <div class="strength-desc">職人の一品一品</div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature Band -->
+<div class="feature-band">
+  <span class="accent">―</span> 黒酢を、もっと身近に。 <span class="accent">―</span>
+</div>
+
+<!-- Story -->
+<section class="story" id="story">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="label">― OUR STORY ―</div>
+      <h2>2017年、想いを込めて。</h2>
+    </div>
+    <p class="story-text">
+      鹿児島・福山町の壺畑で、ゆっくりと醸される本物の黒酢。<br>
+      その力を、誰もが日々の食卓で楽しめる料理にしてお届けする。<br>
+      職人の手と季節のいとなみを、ひとつの皿に。<br>
+      それが、私たち伊達醸造三豊の始まりです。
+    </p>
+    <div class="retailers">
+      <div class="retailers-label">― OFFICIAL RETAILERS ―</div>
+      <div class="retailers-list">
+        銀座三越　／　日本橋三越　／　松屋銀座<br>
+        高島屋日本橋　／　伊勢丹立川<br>
+        マルイ国分寺　／　聖蹟京王
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products" id="products">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="label">― PRODUCTS ―</div>
+      <h2>商品ラインナップ</h2>
+      <p class="lead">
+        ご家庭でお楽しみいただけるたれ・黒酢の物販商品と、<br>
+        百貨店催事会場でしか味わえない季節の南蛮料理をご用意しています。
+      </p>
+    </div>
+
+    <!-- EC販売商品 -->
+    <div class="product-section-title">
+      <h3>― オンラインで購入できる商品 ―</h3>
+    </div>
+    <p class="product-section-sub" style="margin-bottom:32px;">全国どこへでもお届けいたします。ギフトラッピング承り中。</p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img c1">
+          <span class="product-badge">看板商品</span>
+          南蛮ダレ
+        </div>
+        <div class="product-body">
+          <div class="product-name">南蛮用たれ</div>
+          <div class="product-desc">催事の鶏南蛮の味を、ご家庭で。鶏胸肉や白身魚にかけるだけで本格南蛮料理に。黒酢のまろやかな酸味が決め手。</div>
+          <div class="product-price">¥1,080 <span style="font-size:11px; color:#7A6A4F;">税込 / 200ml</span></div>
+          <a href="https://ytfood.official.ec/" class="product-cta">購入する →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img c2">
+          黒酢ダレ
+        </div>
+        <div class="product-body">
+          <div class="product-name">黒酢のたれ</div>
+          <div class="product-desc">毎日の食卓の万能調味料。サラダ・焼き魚・冷奴・餃子のたれに。野菜炒めにひとふりで黒酢風味の一皿が完成。</div>
+          <div class="product-price">¥980 <span style="font-size:11px; color:#7A6A4F;">税込 / 200ml</span></div>
+          <a href="https://ytfood.official.ec/" class="product-cta">購入する →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img c3">
+          原酢
+        </div>
+        <div class="product-body">
+          <div class="product-name">鹿児島 壺畑黒酢</div>
+          <div class="product-desc">福山町・伝統の壺畑仕込み。料理に飲用に。アミノ酸豊富でまろやかな口あたり。健康志向のご家族への贈り物にも。</div>
+          <div class="product-price">¥1,620 <span style="font-size:11px; color:#7A6A4F;">税込 / 360ml</span></div>
+          <a href="https://ytfood.official.ec/" class="product-cta">購入する →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 催事限定 -->
+    <div class="product-section-title">
+      <h3>― 催事会場限定メニュー ―</h3>
+    </div>
+    <p class="product-section-sub" style="margin-bottom:32px;">百貨店催事会場でその場で調理・販売する季節の南蛮料理です。会期中のみのお楽しみ。</p>
+
+    <div class="product-grid event">
+      <div class="product-card">
+        <div class="product-img c1">
+          <span class="product-badge">通年</span>
+          鶏南蛮
+        </div>
+        <div class="product-body">
+          <div class="product-name">鶏南蛮</div>
+          <div class="product-desc">看板の一品。<br>サクッと揚げた鶏に黒酢ダレ。</div>
+          <span class="product-event-only">催事限定</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img c4">
+          <span class="product-badge">秋冬</span>
+          蓮根
+        </div>
+        <div class="product-body">
+          <div class="product-name">レンコン南蛮</div>
+          <div class="product-desc">食感が決め手。<br>シャキッとした歯ごたえ。</div>
+          <span class="product-event-only">催事限定</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img c2">
+          <span class="product-badge">春夏</span>
+          いか
+        </div>
+        <div class="product-body">
+          <div class="product-name">いか南蛮</div>
+          <div class="product-desc">春の味覚。<br>柔らかいいかと黒酢の絶妙な組合せ。</div>
+          <span class="product-event-only">催事限定</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img c5">
+          <span class="product-badge">冬</span>
+          牡蠣
+        </div>
+        <div class="product-body">
+          <div class="product-name">牡蠣南蛮</div>
+          <div class="product-desc">冬の特別メニュー。<br>濃厚な旨味を黒酢が引き立てる。</div>
+          <span class="product-event-only">催事限定</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Schedule -->
+<section class="schedule" id="schedule">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="label">― EVENT SCHEDULE ―</div>
+      <h2>催事スケジュール</h2>
+      <p class="lead">
+        催事会場でしか味わえない、その場で揚げたての南蛮料理。<br>
+        ご来場をお待ちしております。
+      </p>
+    </div>
+    <div class="schedule-table-wrap">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>会期</th>
+            <th>店舗</th>
+            <th>催事メニュー</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="date">5月14日 〜 5月20日</td>
+            <td class="store">銀座三越 本館B2F<span class="schedule-now">開催中</span></td>
+            <td class="menu-c">いか南蛮 ／ 物販各種</td>
+          </tr>
+          <tr>
+            <td class="date">5月22日 〜 5月28日</td>
+            <td class="store">日本橋三越 本館B1F</td>
+            <td class="menu-c">鶏南蛮 ／ 物販各種</td>
+          </tr>
+          <tr>
+            <td class="date">6月4日 〜 6月10日</td>
+            <td class="store">松屋銀座 B1F</td>
+            <td class="menu-c">レンコン南蛮 ／ 物販各種</td>
+          </tr>
+          <tr>
+            <td class="date">6月18日 〜 6月24日</td>
+            <td class="store">高島屋日本橋 B1F</td>
+            <td class="menu-c">夏野菜南蛮 ／ 物販各種</td>
+          </tr>
+          <tr>
+            <td class="date">7月2日 〜 7月8日</td>
+            <td class="store">伊勢丹立川 B1F</td>
+            <td class="menu-c">鶏南蛮 ／ 物販各種</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Recipe -->
+<section class="recipe" id="recipe">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="label">― RECIPE ―</div>
+      <h2>かんたんレシピ</h2>
+      <p class="lead">
+        ご家庭で買っていただいたたれや黒酢を使った、<br>
+        毎日の食卓に取り入れやすいレシピをご紹介します。
+      </p>
+    </div>
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <div class="recipe-img r1">アジの南蛮漬け</div>
+        <div class="recipe-body">
+          <div class="recipe-tag">使用：南蛮用たれ</div>
+          <div class="recipe-name">アジの南蛮漬け</div>
+          <div class="recipe-meta">調理時間：20分 ／ 2人前<br>定番の南蛮漬けが、黒酢ダレでまろやかに。</div>
+        </div>
+      </div>
+      <div class="recipe-card">
+        <div class="recipe-img r2">黒酢ドリンク</div>
+        <div class="recipe-body">
+          <div class="recipe-tag">使用：鹿児島黒酢</div>
+          <div class="recipe-name">黒酢ハニードリンク</div>
+          <div class="recipe-meta">調理時間：3分 ／ 1杯<br>朝の一杯に。蜂蜜と炭酸水で爽やかに。</div>
+        </div>
+      </div>
+      <div class="recipe-card">
+        <div class="recipe-img r3">黒酢炒め</div>
+        <div class="recipe-body">
+          <div class="recipe-tag">使用：黒酢のたれ</div>
+          <div class="recipe-name">豚と野菜の黒酢炒め</div>
+          <div class="recipe-meta">調理時間：15分 ／ 2人前<br>たれをかけて炒めるだけ。中華風の一皿。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voice -->
+<section class="voice" id="voice">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="label">― CUSTOMER VOICE ―</div>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">毎月の銀座三越での催事を楽しみにしています。黒酢のたれは家族みんなに大好評。<br>もう常備調味料です。</p>
+        <div class="voice-author">― 50代女性 ／ 東京都</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">季節ごとに変わるメニューが楽しみで、毎回必ず立ち寄ります。レンコン南蛮の食感がたまりません。</p>
+        <div class="voice-author">― 60代男性 ／ 神奈川県</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">健康志向の母にプレゼント。黒酢を毎日の料理に使うようになったと喜んでいます。<br>贈答にもおすすめ。</p>
+        <div class="voice-author">― 40代女性 ／ 千葉県</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram -->
+<section class="instagram">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="label">― @SANPO_YT ―</div>
+      <h2>Instagram</h2>
+      <p class="lead">催事の様子・新商品情報・季節のレシピを発信中です。</p>
+    </div>
+    <div class="ig-grid">
+      <div class="ig-item">#催事</div>
+      <div class="ig-item">#黒酢</div>
+      <div class="ig-item">#銀座三越</div>
+      <div class="ig-item">#鶏南蛮</div>
+      <div class="ig-item">#レシピ</div>
+      <div class="ig-item">#新商品</div>
+    </div>
+    <div class="ig-follow">
+      <a href="https://www.instagram.com/" class="btn btn-outline">Instagramをフォロー</a>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-final">
+  <div class="label">― ONLINE SHOP ―</div>
+  <h2>催事の味を、ご自宅でも。</h2>
+  <p>送料一律 ／ 全国配送 ／ ギフトラッピング対応</p>
+  <a href="https://ytfood.official.ec/" class="btn btn-primary" style="background:#D4AF6A; color:#3C1E0F;">オンラインショップへ →</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="small">DATE JOZO</span>
+        伊達醸造 三豊
+      </div>
+      <p>鹿児島産黒酢を使った南蛮料理の催事販売、および南蛮ダレ・黒酢の物販を行っています。「日本においしい幸せを」をブランドコンセプトに、安全で健康な食卓をお届けします。</p>
+    </div>
+    <div class="footer-col">
+      <h4>BRAND</h4>
+      <a href="#story">ブランドストーリー</a>
+      <a href="#products">商品ラインナップ</a>
+      <a href="#schedule">催事スケジュール</a>
+      <a href="#recipe">レシピ</a>
+    </div>
+    <div class="footer-col">
+      <h4>SHOP</h4>
+      <a href="https://ytfood.official.ec/">オンラインショップ</a>
+      <a href="#">送料・配送について</a>
+      <a href="#">ギフト包装</a>
+      <a href="#">お問い合わせ</a>
+    </div>
+    <div class="footer-col">
+      <h4>SNS</h4>
+      <a href="#">Instagram</a>
+      <a href="#">LINE公式</a>
+      <a href="#">メルマガ登録</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    株式会社ワイティフード ／ © 2025 Date Jozo Sanpo. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>

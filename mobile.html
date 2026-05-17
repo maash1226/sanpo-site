@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>伊達醸造 三豊 ｜ 鹿児島黒酢の南蛮料理</title>
+<meta name="description" content="鹿児島産黒酢を使った南蛮料理の催事販売と、ご家庭で楽しめる南蛮ダレ・黒酢の物販。銀座三越・日本橋三越ほか百貨店出店中。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    background:#FBF7F0;
+    color:#3C1E0F;
+    line-height:1.8;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:64px;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  /* ===== Top Notice ===== */
+  .top-notice{
+    background:#3C1E0F;
+    color:#D4AF6A;
+    text-align:center;
+    padding:7px 12px;
+    font-size:10px;
+    letter-spacing:0.1em;
+    font-family:'Shippori Mincho', serif;
+  }
+
+  /* ===== Navigation ===== */
+  .nav{
+    background:#FBF7F0;
+    border-bottom:0.5px solid rgba(60,30,15,0.15);
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(10px);
+  }
+  .nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+  }
+  .logo{
+    font-family:'Shippori Mincho', serif;
+    font-size:15px;
+    color:#3C1E0F;
+    letter-spacing:0.12em;
+    font-weight:500;
+  }
+  .logo .small{
+    display:block;
+    font-size:8px;
+    color:#B89968;
+    letter-spacing:0.3em;
+    margin-bottom:1px;
+  }
+  .menu-btn{
+    background:transparent;
+    border:none;
+    width:32px; height:32px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:4px;
+    cursor:pointer;
+  }
+  .menu-btn span{
+    display:block;
+    width:20px; height:1px;
+    background:#3C1E0F;
+    margin:0 auto;
+    transition:all 0.3s;
+  }
+  .menu-btn.active span:nth-child(1){transform:translateY(2.5px) rotate(45deg);}
+  .menu-btn.active span:nth-child(2){transform:translateY(-2.5px) rotate(-45deg);}
+
+  /* ===== Drawer Menu ===== */
+  .drawer{
+    position:fixed;
+    top:0; right:-100%;
+    width:80%; max-width:300px;
+    height:100vh;
+    background:#FBF7F0;
+    z-index:200;
+    transition:right 0.3s;
+    padding:60px 28px 28px;
+    box-shadow:-10px 0 40px rgba(0,0,0,0.1);
+    overflow-y:auto;
+  }
+  .drawer.open{right:0;}
+  .drawer-close{
+    position:absolute;
+    top:16px; right:16px;
+    background:transparent;
+    border:none;
+    font-size:20px;
+    color:#3C1E0F;
+    cursor:pointer;
+    width:32px; height:32px;
+  }
+  .drawer-label{
+    font-family:'Shippori Mincho', serif;
+    font-size:10px;
+    color:#B89968;
+    letter-spacing:0.4em;
+    margin-bottom:16px;
+  }
+  .drawer a{
+    display:block;
+    font-family:'Shippori Mincho', serif;
+    font-size:16px;
+    color:#3C1E0F;
+    padding:14px 0;
+    border-bottom:0.5px solid rgba(184,153,104,0.3);
+    letter-spacing:0.1em;
+  }
+  .drawer .nav-cta-mobile{
+    background:#C8541A;
+    color:#FBF7F0;
+    text-align:center;
+    margin-top:24px;
+    padding:14px;
+    border:none;
+    letter-spacing:0.15em;
+    font-size:13px;
+  }
+  .overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    z-index:150;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.3s;
+  }
+  .overlay.show{opacity:1; pointer-events:auto;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    padding:48px 22px 36px;
+    text-align:center;
+    overflow:hidden;
+    background:#FBF7F0;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    top:14px; left:14px;
+    width:30px; height:30px;
+    border-top:1px solid #B89968;
+    border-left:1px solid #B89968;
+    opacity:0.5;
+  }
+  .hero::after{
+    content:'';
+    position:absolute;
+    bottom:14px; right:14px;
+    width:30px; height:30px;
+    border-bottom:1px solid #B89968;
+    border-right:1px solid #B89968;
+    opacity:0.5;
+  }
+  .hero-label{
+    font-family:'Shippori Mincho', serif;
+    font-size:10px;
+    color:#B89968;
+    letter-spacing:0.35em;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-family:'Shippori Mincho', serif;
+    font-size:30px;
+    font-weight:500;
+    color:#3C1E0F;
+    line-height:1.5;
+    letter-spacing:0.05em;
+    margin-bottom:14px;
+  }
+  .hero h1 .accent{color:#C8541A;}
+  .hero-sub{
+    font-size:12px;
+    color:#5A3A22;
+    line-height:2;
+    margin-bottom:24px;
+  }
+  .hero-cta-row{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:36px;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 22px;
+    font-size:12px;
+    letter-spacing:0.15em;
+    cursor:pointer;
+    border:none;
+    font-family:'Shippori Mincho', serif;
+    text-align:center;
+    transition:all 0.2s;
+  }
+  .btn-primary{background:#C8541A; color:#FBF7F0;}
+  .btn-primary:active{background:#A0431A;}
+  .btn-outline{background:transparent; color:#3C1E0F; border:1px solid #3C1E0F;}
+  .btn-outline:active{background:#3C1E0F; color:#FBF7F0;}
+
+  /* ===== Next Event Card ===== */
+  .next-event{
+    background:#FFFFFF;
+    border:0.5px solid #B89968;
+    padding:18px 20px;
+    margin:0 0 32px;
+    text-align:left;
+    position:relative;
+  }
+  .next-event::before{
+    content:'NEXT';
+    position:absolute;
+    top:-9px; left:16px;
+    background:#C8541A;
+    color:#FBF7F0;
+    font-size:9px;
+    padding:2px 10px;
+    letter-spacing:0.2em;
+  }
+  .next-event-store{
+    font-family:'Shippori Mincho', serif;
+    font-size:16px;
+    color:#3C1E0F;
+    margin-bottom:4px;
+    letter-spacing:0.1em;
+  }
+  .next-event-date{
+    font-size:11px;
+    color:#7A6A4F;
+    margin-bottom:8px;
+  }
+  .next-event-menu{
+    font-size:12px;
+    color:#C8541A;
+    font-family:'Shippori Mincho', serif;
+  }
+
+  /* ===== Strengths Grid (Mobile: 2x2) ===== */
+  .strengths{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    border-top:0.5px solid rgba(184,153,104,0.4);
+    border-bottom:0.5px solid rgba(184,153,104,0.4);
+  }
+  .strength-item{
+    text-align:center;
+    padding:20px 8px;
+    border-right:0.5px solid rgba(184,153,104,0.3);
+    border-bottom:0.5px solid rgba(184,153,104,0.3);
+  }
+  .strength-item:nth-child(2n){border-right:none;}
+  .strength-item:nth-last-child(-n+2){border-bottom:none;}
+  .strength-num{
+    font-family:'Shippori Mincho', serif;
+    font-size:26px;
+    color:#C8541A;
+    margin-bottom:6px;
+    line-height:1;
+  }
+  .strength-title{
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    color:#3C1E0F;
+    letter-spacing:0.08em;
+    margin-bottom:4px;
+  }
+  .strength-desc{
+    font-size:10px;
+    color:#7A6A4F;
+    line-height:1.6;
+  }
+
+  /* ===== Feature Band ===== */
+  .feature-band{
+    background:#3C1E0F;
+    color:#F5E6CC;
+    text-align:center;
+    padding:18px 12px;
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    letter-spacing:0.18em;
+  }
+  .feature-band .accent{color:#D4AF6A;}
+
+  /* ===== Section Common ===== */
+  section{padding:48px 22px;}
+  .section-head{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .section-head .label{
+    font-family:'Shippori Mincho', serif;
+    font-size:10px;
+    color:#B89968;
+    letter-spacing:0.35em;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-family:'Shippori Mincho', serif;
+    font-size:22px;
+    font-weight:500;
+    color:#3C1E0F;
+    letter-spacing:0.1em;
+  }
+  .section-head .lead{
+    font-size:12px;
+    color:#5A3A22;
+    line-height:2;
+    margin-top:12px;
+  }
+
+  /* ===== Story ===== */
+  .story{background:#FBF7F0;}
+  .story-text{
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    color:#3C1E0F;
+    line-height:2.3;
+    text-align:center;
+    margin-bottom:28px;
+    letter-spacing:0.05em;
+  }
+  .retailers{
+    background:#FFFFFF;
+    border:0.5px solid rgba(184,153,104,0.5);
+    padding:20px 18px;
+  }
+  .retailers-label{
+    font-family:'Shippori Mincho', serif;
+    font-size:10px;
+    color:#B89968;
+    letter-spacing:0.3em;
+    text-align:center;
+    margin-bottom:12px;
+  }
+  .retailers-list{
+    font-family:'Shippori Mincho', serif;
+    font-size:12px;
+    color:#3C1E0F;
+    line-height:2.2;
+    text-align:center;
+    letter-spacing:0.1em;
+  }
+
+  /* ===== Products ===== */
+  .products{background:#F5E6CC;}
+  .product-section-title{
+    text-align:center;
+    margin:32px 0 18px;
+    position:relative;
+  }
+  .product-section-title:first-of-type{margin-top:0;}
+  .product-section-title::before{
+    content:'';
+    position:absolute;
+    top:50%; left:0; right:0;
+    height:0.5px;
+    background:#B89968;
+    z-index:0;
+  }
+  .product-section-title h3{
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    color:#3C1E0F;
+    font-weight:500;
+    letter-spacing:0.12em;
+    display:inline-block;
+    padding:0 14px;
+    background:#F5E6CC;
+    position:relative;
+    z-index:1;
+  }
+  .product-section-sub{
+    font-size:11px;
+    color:#5A3A22;
+    text-align:center;
+    margin-bottom:20px;
+    line-height:1.8;
+  }
+  .product-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .product-grid.event{
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+  }
+  .product-card{
+    background:#FFFFFF;
+    border:0.5px solid rgba(60,30,15,0.15);
+    overflow:hidden;
+  }
+  .product-card.flex{
+    display:flex;
+    align-items:stretch;
+  }
+  .product-img{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#F5E6CC;
+    font-family:'Shippori Mincho', serif;
+    letter-spacing:0.15em;
+    position:relative;
+    flex-shrink:0;
+  }
+  .product-card.flex .product-img{
+    width:120px;
+    font-size:18px;
+  }
+  .product-grid.event .product-img{
+    height:100px;
+    font-size:16px;
+  }
+  .product-img.c1{background:linear-gradient(135deg, #C8541A 0%, #A0431A 100%);}
+  .product-img.c2{background:linear-gradient(135deg, #A0431A 0%, #6B2D11 100%);}
+  .product-img.c3{background:linear-gradient(135deg, #3C1E0F 0%, #2A1408 100%);}
+  .product-img.c4{background:linear-gradient(135deg, #5A3A22 0%, #3C1E0F 100%);}
+  .product-img.c5{background:linear-gradient(135deg, #B89968 0%, #8B6F3F 100%);}
+  .product-badge{
+    position:absolute;
+    top:8px; left:8px;
+    background:rgba(0,0,0,0.4);
+    color:#F5E6CC;
+    font-size:8px;
+    padding:2px 7px;
+    letter-spacing:0.15em;
+  }
+  .product-body{padding:14px 16px; flex:1;}
+  .product-name{
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    color:#3C1E0F;
+    margin-bottom:5px;
+    letter-spacing:0.05em;
+  }
+  .product-grid.event .product-name{font-size:13px;}
+  .product-desc{
+    font-size:10px;
+    color:#7A6A4F;
+    line-height:1.7;
+    margin-bottom:10px;
+  }
+  .product-price{
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    color:#C8541A;
+    margin-bottom:8px;
+  }
+  .product-price small{font-size:9px; color:#7A6A4F;}
+  .product-cta{
+    display:inline-block;
+    background:#C8541A;
+    color:#FBF7F0;
+    padding:6px 14px;
+    font-size:10px;
+    letter-spacing:0.15em;
+  }
+  .product-event-only{
+    display:inline-block;
+    color:#B89968;
+    font-size:9px;
+    letter-spacing:0.15em;
+    border:0.5px solid #B89968;
+    padding:3px 7px;
+  }
+
+  /* ===== Schedule ===== */
+  .schedule{background:#FBF7F0;}
+  .schedule-list{
+    background:#FFFFFF;
+    border:0.5px solid #B89968;
+  }
+  .schedule-item{
+    padding:16px 18px;
+    border-bottom:0.5px solid rgba(184,153,104,0.3);
+  }
+  .schedule-item:last-child{border-bottom:none;}
+  .schedule-item.now{
+    background:#FFF5E8;
+    border-left:3px solid #C8541A;
+  }
+  .schedule-date{
+    font-family:'Shippori Mincho', serif;
+    font-size:12px;
+    color:#7A6A4F;
+    margin-bottom:4px;
+  }
+  .schedule-store{
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    color:#3C1E0F;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .schedule-now-badge{
+    background:#C8541A;
+    color:#FBF7F0;
+    font-size:9px;
+    padding:2px 7px;
+    letter-spacing:0.15em;
+    font-family:'Noto Sans JP', sans-serif;
+  }
+  .schedule-menu{
+    font-size:11px;
+    color:#7A6A4F;
+  }
+
+  /* ===== Recipe ===== */
+  .recipe{background:#F5E6CC;}
+  .recipe-grid{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .recipe-card{
+    background:#FBF7F0;
+    border:0.5px solid rgba(60,30,15,0.1);
+    overflow:hidden;
+    display:flex;
+    align-items:stretch;
+  }
+  .recipe-img{
+    width:120px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#FBF7F0;
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    text-align:center;
+    padding:12px;
+    letter-spacing:0.1em;
+    line-height:1.4;
+    background:linear-gradient(135deg, #C8541A 0%, #A0431A 100%);
+  }
+  .recipe-img.r2{background:linear-gradient(135deg, #5A3A22 0%, #3C1E0F 100%);}
+  .recipe-img.r3{background:linear-gradient(135deg, #8B6F3F 0%, #5A3A22 100%);}
+  .recipe-body{padding:14px 16px; flex:1;}
+  .recipe-tag{
+    display:inline-block;
+    font-size:9px;
+    color:#B89968;
+    letter-spacing:0.15em;
+    margin-bottom:4px;
+  }
+  .recipe-name{
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    color:#3C1E0F;
+    margin-bottom:6px;
+    letter-spacing:0.05em;
+  }
+  .recipe-meta{
+    font-size:10px;
+    color:#7A6A4F;
+    line-height:1.7;
+  }
+
+  /* ===== Voice ===== */
+  .voice{background:#3C1E0F;}
+  .voice .section-head h2{color:#F5E6CC;}
+  .voice .section-head .label{color:#D4AF6A;}
+  .voice-grid{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .voice-card{
+    background:#2A1408;
+    border:0.5px solid rgba(212,175,106,0.3);
+    padding:18px 20px;
+  }
+  .voice-quote{
+    font-family:'Shippori Mincho', serif;
+    font-size:24px;
+    color:#D4AF6A;
+    line-height:1;
+    opacity:0.5;
+    margin-bottom:6px;
+  }
+  .voice-text{
+    font-family:'Shippori Mincho', serif;
+    font-size:12px;
+    color:#F5E6CC;
+    line-height:2;
+    margin-bottom:12px;
+  }
+  .voice-author{
+    font-size:10px;
+    color:#B89968;
+    letter-spacing:0.12em;
+    border-top:0.5px solid rgba(184,153,104,0.3);
+    padding-top:10px;
+  }
+
+  /* ===== Instagram ===== */
+  .instagram{background:#FBF7F0;}
+  .ig-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:5px;
+  }
+  .ig-item{
+    aspect-ratio:1;
+    background:linear-gradient(135deg, #C8541A 0%, #A0431A 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#FBF7F0;
+    font-family:'Shippori Mincho', serif;
+    font-size:12px;
+  }
+  .ig-item:nth-child(2){background:linear-gradient(135deg, #5A3A22 0%, #3C1E0F 100%);}
+  .ig-item:nth-child(3){background:linear-gradient(135deg, #B89968 0%, #8B6F3F 100%);}
+  .ig-item:nth-child(4){background:linear-gradient(135deg, #3C1E0F 0%, #2A1408 100%);}
+  .ig-item:nth-child(5){background:linear-gradient(135deg, #C8541A 0%, #6B2D11 100%);}
+  .ig-item:nth-child(6){background:linear-gradient(135deg, #8B6F3F 0%, #5A3A22 100%);}
+  .ig-follow{
+    text-align:center;
+    margin-top:24px;
+  }
+
+  /* ===== Final CTA ===== */
+  .cta-final{
+    background:#3C1E0F;
+    text-align:center;
+    padding:48px 22px;
+    color:#F5E6CC;
+    position:relative;
+  }
+  .cta-final::before, .cta-final::after{
+    content:'';
+    position:absolute;
+    width:40px; height:40px;
+    border:1px solid #D4AF6A;
+    opacity:0.3;
+  }
+  .cta-final::before{top:14px; left:14px; border-right:none; border-bottom:none;}
+  .cta-final::after{bottom:14px; right:14px; border-left:none; border-top:none;}
+  .cta-final .label{
+    font-family:'Shippori Mincho', serif;
+    font-size:10px;
+    color:#D4AF6A;
+    letter-spacing:0.35em;
+    margin-bottom:12px;
+  }
+  .cta-final h2{
+    font-family:'Shippori Mincho', serif;
+    font-size:22px;
+    color:#F5E6CC;
+    margin-bottom:10px;
+    font-weight:500;
+    letter-spacing:0.1em;
+    line-height:1.5;
+  }
+  .cta-final p{
+    font-size:11px;
+    color:#B89968;
+    margin-bottom:24px;
+    letter-spacing:0.1em;
+    line-height:1.8;
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:#2A1408;
+    color:#B89968;
+    padding:32px 22px 24px;
+    font-size:11px;
+  }
+  .footer-brand{
+    text-align:center;
+    margin-bottom:24px;
+    padding-bottom:24px;
+    border-bottom:0.5px solid rgba(184,153,104,0.2);
+  }
+  .footer-brand .logo{color:#F5E6CC;}
+  .footer-brand .logo .small{color:#D4AF6A;}
+  .footer-brand p{
+    font-size:10px;
+    color:#7A6A4F;
+    line-height:1.9;
+    margin-top:12px;
+  }
+  .footer-links{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:24px;
+  }
+  .footer-col h4{
+    font-family:'Shippori Mincho', serif;
+    color:#D4AF6A;
+    font-size:11px;
+    letter-spacing:0.18em;
+    margin-bottom:10px;
+    font-weight:500;
+  }
+  .footer-col a{
+    display:block;
+    color:#B89968;
+    font-size:10px;
+    line-height:2.2;
+  }
+  .footer-bottom{
+    text-align:center;
+    padding-top:18px;
+    font-size:9px;
+    color:#7A6A4F;
+    letter-spacing:0.1em;
+    border-top:0.5px solid rgba(184,153,104,0.2);
+  }
+
+  /* ===== Sticky Bottom CTA ===== */
+  .sticky-cta{
+    position:fixed;
+    bottom:0; left:0; right:0;
+    background:#FBF7F0;
+    border-top:0.5px solid rgba(60,30,15,0.15);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    z-index:90;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.06);
+  }
+  .sticky-cta a{
+    text-align:center;
+    padding:18px 8px;
+    font-family:'Shippori Mincho', serif;
+    font-size:12px;
+    letter-spacing:0.12em;
+  }
+  .sticky-cta a.shop{
+    background:#C8541A;
+    color:#FBF7F0;
+  }
+  .sticky-cta a.event{
+    background:#FBF7F0;
+    color:#3C1E0F;
+  }
+  .sticky-cta .icon{
+    font-size:16px;
+    margin-bottom:2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Notice -->
+<div class="top-notice">― 銀座三越にて開催中（〜5/20） ―</div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="small">DATE JOZO</span>
+      伊達醸造 三豊
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Drawer -->
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drawerClose" aria-label="閉じる">✕</button>
+  <div class="drawer-label">― MENU ―</div>
+  <a href="#story" class="drawer-link">ブランドストーリー</a>
+  <a href="#products" class="drawer-link">商品ラインナップ</a>
+  <a href="#schedule" class="drawer-link">催事スケジュール</a>
+  <a href="#recipe" class="drawer-link">レシピ</a>
+  <a href="#voice" class="drawer-link">お客様の声</a>
+  <a href="https://ytfood.official.ec/" class="nav-cta-mobile">オンラインショップへ →</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-label">― KAGOSHIMA KUROZU ―</div>
+  <h1>日本に、おいしい<br><span class="accent">幸せ</span>を。</h1>
+  <p class="hero-sub">
+    鹿児島・福山町産の本物の黒酢でつくる、<br>
+    季節の南蛮料理。
+  </p>
+
+  <!-- Next Event Highlight -->
+  <div class="next-event">
+    <div class="next-event-store">銀座三越 本館B2F</div>
+    <div class="next-event-date">5月14日（火）〜 5月20日（月）</div>
+    <div class="next-event-menu">いか南蛮 ／ 物販各種</div>
+  </div>
+
+  <div class="hero-cta-row">
+    <a href="https://ytfood.official.ec/" class="btn btn-primary">オンラインショップへ</a>
+    <a href="#schedule" class="btn btn-outline">催事日程を見る</a>
+  </div>
+
+  <div class="strengths">
+    <div class="strength-item">
+      <div class="strength-num">壱</div>
+      <div class="strength-title">鹿児島黒酢</div>
+      <div class="strength-desc">壺畑仕込み</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">弐</div>
+      <div class="strength-title">百貨店実績</div>
+      <div class="strength-desc">2019年〜</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">参</div>
+      <div class="strength-title">旬の彩り</div>
+      <div class="strength-desc">季節の食材</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-num">肆</div>
+      <div class="strength-title">手仕込み</div>
+      <div class="strength-desc">職人の手で</div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature Band -->
+<div class="feature-band">
+  <span class="accent">―</span> 黒酢を、もっと身近に。 <span class="accent">―</span>
+</div>
+
+<!-- Story -->
+<section class="story" id="story">
+  <div class="section-head">
+    <div class="label">― OUR STORY ―</div>
+    <h2>2017年、想いを込めて。</h2>
+  </div>
+  <p class="story-text">
+    鹿児島・福山町の壺畑で、<br>
+    ゆっくりと醸される本物の黒酢。<br>
+    その力を、誰もが日々の食卓で<br>
+    楽しめる料理にしてお届けする。<br>
+    それが、私たちの始まりです。
+  </p>
+  <div class="retailers">
+    <div class="retailers-label">― OFFICIAL RETAILERS ―</div>
+    <div class="retailers-list">
+      銀座三越　／　日本橋三越<br>
+      松屋銀座　／　高島屋日本橋<br>
+      伊勢丹立川　／　マルイ国分寺<br>
+      聖蹟京王
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products" id="products">
+  <div class="section-head">
+    <div class="label">― PRODUCTS ―</div>
+    <h2>商品ラインナップ</h2>
+  </div>
+
+  <div class="product-section-title">
+    <h3>― オンラインで購入できる商品 ―</h3>
+  </div>
+  <p class="product-section-sub">全国どこへでもお届けします。<br>ギフトラッピング承り中。</p>
+
+  <div class="product-grid">
+    <div class="product-card flex">
+      <div class="product-img c1">
+        <span class="product-badge">看板</span>
+        南蛮ダレ
+      </div>
+      <div class="product-body">
+        <div class="product-name">南蛮用たれ</div>
+        <div class="product-desc">催事の鶏南蛮の味を、ご家庭で。鶏胸肉や白身魚にかけるだけで本格南蛮料理に。</div>
+        <div class="product-price">¥1,080 <small>税込/200ml</small></div>
+        <a href="https://ytfood.official.ec/" class="product-cta">購入する →</a>
+      </div>
+    </div>
+    <div class="product-card flex">
+      <div class="product-img c2">黒酢ダレ</div>
+      <div class="product-body">
+        <div class="product-name">黒酢のたれ</div>
+        <div class="product-desc">毎日の食卓の万能調味料。サラダ・焼き魚・炒め物に。</div>
+        <div class="product-price">¥980 <small>税込/200ml</small></div>
+        <a href="https://ytfood.official.ec/" class="product-cta">購入する →</a>
+      </div>
+    </div>
+    <div class="product-card flex">
+      <div class="product-img c3">原酢</div>
+      <div class="product-body">
+        <div class="product-name">鹿児島 壺畑黒酢</div>
+        <div class="product-desc">福山町・伝統の壺畑仕込み。料理に飲用に。健康志向の贈り物にも。</div>
+        <div class="product-price">¥1,620 <small>税込/360ml</small></div>
+        <a href="https://ytfood.official.ec/" class="product-cta">購入する →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-section-title">
+    <h3>― 催事会場限定メニュー ―</h3>
+  </div>
+  <p class="product-section-sub">百貨店催事会場でその場で調理・販売します。<br>会期中のみのお楽しみ。</p>
+
+  <div class="product-grid event">
+    <div class="product-card">
+      <div class="product-img c1">
+        <span class="product-badge">通年</span>
+        鶏南蛮
+      </div>
+      <div class="product-body">
+        <div class="product-name">鶏南蛮</div>
+        <div class="product-desc">看板の一品。<br>サクッと揚げた鶏に黒酢ダレ。</div>
+        <span class="product-event-only">催事限定</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img c4">
+        <span class="product-badge">秋冬</span>
+        蓮根
+      </div>
+      <div class="product-body">
+        <div class="product-name">レンコン南蛮</div>
+        <div class="product-desc">食感が決め手。シャキッとした歯ごたえ。</div>
+        <span class="product-event-only">催事限定</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img c2">
+        <span class="product-badge">春夏</span>
+        いか
+      </div>
+      <div class="product-body">
+        <div class="product-name">いか南蛮</div>
+        <div class="product-desc">柔らかいいかと黒酢の絶妙な組合せ。</div>
+        <span class="product-event-only">催事限定</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img c5">
+        <span class="product-badge">冬</span>
+        牡蠣
+      </div>
+      <div class="product-body">
+        <div class="product-name">牡蠣南蛮</div>
+        <div class="product-desc">冬の特別メニュー。濃厚な旨味。</div>
+        <span class="product-event-only">催事限定</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Schedule -->
+<section class="schedule" id="schedule">
+  <div class="section-head">
+    <div class="label">― EVENT SCHEDULE ―</div>
+    <h2>催事スケジュール</h2>
+  </div>
+  <div class="schedule-list">
+    <div class="schedule-item now">
+      <div class="schedule-date">5月14日（火）〜 5月20日（月）</div>
+      <div class="schedule-store">
+        銀座三越 本館B2F
+        <span class="schedule-now-badge">開催中</span>
+      </div>
+      <div class="schedule-menu">いか南蛮 ／ 物販各種</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-date">5月22日（水）〜 5月28日（火）</div>
+      <div class="schedule-store">日本橋三越 本館B1F</div>
+      <div class="schedule-menu">鶏南蛮 ／ 物販各種</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-date">6月4日（水）〜 6月10日（火）</div>
+      <div class="schedule-store">松屋銀座 B1F</div>
+      <div class="schedule-menu">レンコン南蛮 ／ 物販各種</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-date">6月18日（水）〜 6月24日（火）</div>
+      <div class="schedule-store">高島屋日本橋 B1F</div>
+      <div class="schedule-menu">夏野菜南蛮 ／ 物販各種</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-date">7月2日（水）〜 7月8日（火）</div>
+      <div class="schedule-store">伊勢丹立川 B1F</div>
+      <div class="schedule-menu">鶏南蛮 ／ 物販各種</div>
+    </div>
+  </div>
+</section>
+
+<!-- Recipe -->
+<section class="recipe" id="recipe">
+  <div class="section-head">
+    <div class="label">― RECIPE ―</div>
+    <h2>かんたんレシピ</h2>
+  </div>
+  <div class="recipe-grid">
+    <div class="recipe-card">
+      <div class="recipe-img r1">アジの<br>南蛮漬け</div>
+      <div class="recipe-body">
+        <div class="recipe-tag">南蛮用たれ</div>
+        <div class="recipe-name">アジの南蛮漬け</div>
+        <div class="recipe-meta">20分 ／ 2人前<br>定番が黒酢ダレでまろやかに。</div>
+      </div>
+    </div>
+    <div class="recipe-card">
+      <div class="recipe-img r2">黒酢<br>ドリンク</div>
+      <div class="recipe-body">
+        <div class="recipe-tag">鹿児島黒酢</div>
+        <div class="recipe-name">黒酢ハニードリンク</div>
+        <div class="recipe-meta">3分 ／ 1杯<br>朝の一杯に。蜂蜜と炭酸水で。</div>
+      </div>
+    </div>
+    <div class="recipe-card">
+      <div class="recipe-img r3">黒酢<br>炒め</div>
+      <div class="recipe-body">
+        <div class="recipe-tag">黒酢のたれ</div>
+        <div class="recipe-name">豚と野菜の黒酢炒め</div>
+        <div class="recipe-meta">15分 ／ 2人前<br>かけて炒めるだけ。中華風の一皿。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voice -->
+<section class="voice" id="voice">
+  <div class="section-head">
+    <div class="label">― VOICE ―</div>
+    <h2>お客様の声</h2>
+  </div>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">毎月の銀座三越での催事を楽しみにしています。黒酢のたれは家族みんなに大好評。もう常備調味料です。</p>
+      <div class="voice-author">― 50代女性 ／ 東京都</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">季節ごとに変わるメニューが楽しみで、毎回必ず立ち寄ります。レンコン南蛮の食感がたまりません。</p>
+      <div class="voice-author">― 60代男性 ／ 神奈川県</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">健康志向の母にプレゼント。黒酢を毎日の料理に使うようになったと喜んでいます。</p>
+      <div class="voice-author">― 40代女性 ／ 千葉県</div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram -->
+<section class="instagram">
+  <div class="section-head">
+    <div class="label">― @SANPO_YT ―</div>
+    <h2>Instagram</h2>
+    <p class="lead">催事の様子・新商品情報を発信中。</p>
+  </div>
+  <div class="ig-grid">
+    <div class="ig-item">#催事</div>
+    <div class="ig-item">#黒酢</div>
+    <div class="ig-item">#銀座三越</div>
+    <div class="ig-item">#鶏南蛮</div>
+    <div class="ig-item">#レシピ</div>
+    <div class="ig-item">#新商品</div>
+  </div>
+  <div class="ig-follow">
+    <a href="https://www.instagram.com/" class="btn btn-outline">Instagramをフォロー</a>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-final">
+  <div class="label">― ONLINE SHOP ―</div>
+  <h2>催事の味を、<br>ご自宅でも。</h2>
+  <p>送料一律 ／ 全国配送<br>ギフトラッピング対応</p>
+  <a href="https://ytfood.official.ec/" class="btn btn-primary" style="background:#D4AF6A; color:#3C1E0F;">オンラインショップへ →</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">
+    <div class="logo">
+      <span class="small">DATE JOZO</span>
+      伊達醸造 三豊
+    </div>
+    <p>鹿児島産黒酢を使った南蛮料理の催事販売、および南蛮ダレ・黒酢の物販を行っています。</p>
+  </div>
+  <div class="footer-links">
+    <div class="footer-col">
+      <h4>BRAND</h4>
+      <a href="#story">ブランドストーリー</a>
+      <a href="#products">商品ラインナップ</a>
+      <a href="#schedule">催事スケジュール</a>
+      <a href="#recipe">レシピ</a>
+    </div>
+    <div class="footer-col">
+      <h4>SHOP / SNS</h4>
+      <a href="https://ytfood.official.ec/">オンラインショップ</a>
+      <a href="#">お問い合わせ</a>
+      <a href="#">Instagram</a>
+      <a href="#">LINE公式</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    株式会社ワイティフード<br>© 2025 Date Jozo Sanpo
+  </div>
+</footer>
+
+<!-- Sticky Bottom CTA -->
+<div class="sticky-cta">
+  <a href="#schedule" class="event">
+    <div>催事日程</div>
+  </a>
+  <a href="https://ytfood.official.ec/" class="shop">
+    <div>オンラインショップ</div>
+  </a>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const drawer = document.getElementById('drawer');
+  const drawerClose = document.getElementById('drawerClose');
+  const overlay = document.getElementById('overlay');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    overlay.classList.add('show');
+    menuBtn.classList.add('active');
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    overlay.classList.remove('show');
+    menuBtn.classList.remove('active');
+  }
+
+  menuBtn.addEventListener('click', () => {
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+  });
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  drawerLinks.forEach(l => l.addEventListener('click', closeDrawer));
+</script>
+
+</body>
+</html>
